@@ -18,4 +18,6 @@ currencies[:us] #=> "dollar"
 # キーも値もシンボルの場合
 { japan: :yen, us: :dollar, india: :rupee }
 
+# 上と同じ
+{ :japan => :yen, :us => :dollar, :india => :rupee }
 # ----------------------------------------
