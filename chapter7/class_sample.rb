@@ -25,3 +25,26 @@ users.each do |user|
 end
 #=> 氏名: Alice Ruby、年齢: 20
 #   氏名: Bob Python、年齢: 30
+
+
+# ----------------------------------------
+
+class User
+  def initialize(name)
+    @name = name
+  end
+
+  # これはインスタンスメソッド
+  def hello
+    # @nameの値はインスタンスによって異なる
+    "Hello, I am #{@name}."
+  end
+end
+alice = User.new('Alice')
+# インスタンスメソッドはインスタンス（オブジェクト）に対して呼び出す
+alice.hello #=> "Hello, I am Alice."
+
+bob = User.new('Bob')
+# インスタンスによって内部のデータが異なるので、helloメソッドの結果も異なる
+bob.hello   #=> "Hello, I am Bob."
+
