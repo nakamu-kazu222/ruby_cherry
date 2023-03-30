@@ -6,7 +6,7 @@ def chara_length(ary)
   ary.map { |s| s.ljust(max_chara) }
 end
 
-# 3行に別け、名前順にさせる
+# 3行にわけ、名前順にさせる
 def file_set(ary)
   column_file = []
   column_count = 3
@@ -14,7 +14,7 @@ def file_set(ary)
   # 1行に何個のファイルを格納するか、全部/3行で切り上げで計算
   row_count = ary.size.quo(column_count).ceil
 
-  # 1行にrow_count分のファイルを格納し、スライスして分ける
+  # 1行にrow_count分のファイルを格納し、スライスする
   ary.each_slice(row_count) { |file| column_file << file }
 
   column_last = column_file[column_count - 1]
@@ -26,6 +26,7 @@ def file_set(ary)
   column_file.transpose
 end
 
+# ターミナルに表示
 def display(ary)
   ary.each do |array|
     array.each do |a|
